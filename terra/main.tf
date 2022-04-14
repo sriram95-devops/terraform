@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "mygrop" {
 resource "azurerm_app_service_plan" "terraplan" {  
   name                = "terraf"  
   location            = "eastus"  
-  resource_group_name = azurerm_resource_group.{ResourceGroup}.name  
+  resource_group_name = azurerm_resource_group.mygrop.name  
   
   sku {  
     tier = "Standard"  
@@ -26,8 +26,8 @@ resource "azurerm_app_service_plan" "terraplan" {
 resource "azurerm_app_service" "myapp" {  
   name                = "terrafweba"  
   location            = "eastus"  
-  resource_group_name = azurerm_resource_group.{ResourceGroup}.name  
-  app_service_plan_id = azurerm_app_service_plan.{AppServicePlanName}.id  
+  resource_group_name = azurerm_resource_group.mygrop.name  
+  app_service_plan_id = azurerm_app_service_plan.terraplan.id  
   
   app_settings = {  
     "DeviceName" = "SampleDevice",  

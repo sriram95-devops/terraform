@@ -9,7 +9,7 @@ provider "azurerm" {
   features {}    
 }    
 resource "azurerm_resource_group" "mygrop" {    
-  name = "{ResourceGroup}"    
+  name = "RG"    
   location = "eastus"    
 }   
 resource "azurerm_app_service_plan" "terraplan" {  

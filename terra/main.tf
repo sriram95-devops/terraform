@@ -18,8 +18,8 @@ resource "azurerm_app_service_plan" "terraplan" {
   resource_group_name = azurerm_resource_group.mygrop.name  
   
   sku {  
-    tier = "Standard"  
-    size = "S1"  
+    tier = "Free"  
+    size = "F1"  
   }  
 }  
   
